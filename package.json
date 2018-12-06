@@ -1,0 +1,23 @@
+{
+  "name": "wheel",
+  "version": "0.0.1",
+  "description": "UI组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buyuanwanli/wheel.git"
+  },
+  "keywords": [
+    "vue",
+    "UI"
+  ],
+  "author": "不远",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buyuanwanli/wheel/issues"
+  },
+  "homepage": "https://github.com/buyuanwanli/wheel#readme"
+}
