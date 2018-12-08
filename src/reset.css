@@ -17,12 +17,7 @@
     --active-color: #3991ff;
 }
 
-.icon {
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-    overflow: hidden;
-}
+
 
 #app {
     margin: 50px;

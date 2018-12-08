@@ -1,9 +1,6 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-
-        <svg v-if="icon" class="icon" aria-hidden="true">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+    <button class="u-button" :class="{[`icon-${iconPosition}`]:true}">
+        <u-icon v-if="icon" :name="icon"></u-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -27,7 +24,7 @@
 
 <style lang="scss">
     //$color: orange;
-    .g-button {
+    .u-button {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -38,6 +35,7 @@
         border: 1px solid var(--border-color);
         color: var(--color);
         padding: 0 1em;
+        border-radius: var(--border-radius);
         &:hover {
             color: var(--hover-color);
             background: var(--button-hover-bg);
@@ -46,7 +44,7 @@
             outline: none;
             background: var(--active-color);
         }
-        > .icon {
+        > .u-icon {
             order: 1;
             margin-right: .3em;
         }
@@ -54,7 +52,7 @@
             order: 2;
         }
         &.icon-right {
-            > .icon {
+            > .u-icon {
                 order: 2;
                 margin-right: 0;
                 margin-left: .3em;
