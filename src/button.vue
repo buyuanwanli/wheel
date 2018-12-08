@@ -1,5 +1,6 @@
-<template>
+<template xmlns="">
     <button class="u-button" :class="{[`icon-${iconPosition}`]:true}">
+        <u-icon name="loading" class="loading"></u-icon>
         <u-icon v-if="icon" :name="icon"></u-icon>
         <div class="content">
             <slot></slot>
@@ -23,7 +24,15 @@
 </script>
 
 <style lang="scss">
-    //$color: orange;
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
     .u-button {
         display: inline-flex;
         justify-content: center;
@@ -61,6 +70,8 @@
                 order: 1;
             }
         }
-
+        .loading {
+            animation: circle 2s linear infinite;
+        }
     }
 </style>
