@@ -4,10 +4,13 @@ import Icon from './icon'
 
 import './reset.css'
 
-Vue.component('u-button', Button)
-Vue.component('u-icon', Icon)
+Vue.component('u-button', Button);
+Vue.component('u-icon', Icon);
 
 new Vue({
     el: '#app',
-})
+    data: {
+        loading1: false
+    }
+});
 
