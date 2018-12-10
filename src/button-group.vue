@@ -5,7 +5,16 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        mounted() {
+            for (let node of this.$el.children) {
+                let name = node.nodeName.toLowerCase()
+                if (name !== 'button') {
+                    console.warn(`button-group的子元素应该全部是button，而你的是${name}`)
+                }
+            }
+        }
+    }
 </script>
 
 <style scoped lang="scss">
