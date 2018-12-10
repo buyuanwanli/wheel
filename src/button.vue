@@ -38,6 +38,7 @@
     }
 
     .u-button {
+
         display: inline-flex;
         justify-content: center;
         align-items: center;
