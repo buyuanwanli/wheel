@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import chai from 'chai'
-import vm from './button'
+import Button from './button'
 import Icon from './icon'
 import ButtonGroup from './button-group'
 
 import './reset.css'
 
-Vue.component('u-button', vm);
+Vue.component('u-button', Button);
 Vue.component('u-icon', Icon);
 Vue.component('button-group', ButtonGroup);
 /** @namespace chai.expect */
@@ -21,7 +21,7 @@ new Vue({
 
 //单元测试
 {
-    const Constructor = Vue.extend(vm);
+    const Constructor = Vue.extend(Button);
     const vm = new Constructor({
         propsData: {
             icon: 'setting'
@@ -30,10 +30,13 @@ new Vue({
     vm.$mount();
     let useElement = vm.$el.querySelector('use');
     let href = useElement.getAttribute('xlink:href');
-    expect(href).to.eq('#i-setting')
+    expect(href).to.eq('#i-setting');
+    vm.$el.remove();
+    vm.$destroy();
 }
+
 {
-    const Constructor = Vue.extend(vm);
+    const Constructor = Vue.extend(Button);
     const vm = new Constructor({
         propsData: {
             icon: 'setting',
@@ -43,23 +46,43 @@ new Vue({
     vm.$mount();
     let useElement = vm.$el.querySelector('use');
     let href = useElement.getAttribute('xlink:href');
-    expect(href).to.eq('#i-loading')
+    expect(href).to.eq('#i-loading');
+    vm.$el.remove();
+    vm.$destroy();
 }
+
 {
     const div = document.createElement('div');
     document.body.appendChild(div);
-    const Constructor = Vue.extend(vm);
-    const button = new Constructor({
+    const Constructor = Vue.extend(Button);
+    const vm = new Constructor({
         propsData: {
             icon: 'setting',
         }
     });
-    button.$mount(div);
-    let svg = button.$el.querySelector('svg');
-    let order = window.getComputedStyle(svg).order;
+    vm.$mount(div);
+    let svg = vm.$el.querySelector('svg');
+    let {order} = window.getComputedStyle(svg);
     expect(order).to.eq('1');
-    button.$el.remove();
-    button.$destroy();
+    vm.$el.remove();
+    vm.$destroy();
 }
 
+{
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    const Constructor = Vue.extend(Button);
+    const vm = new Constructor({
+        propsData: {
+            icon: 'setting',
+            iconPosition: 'right'
+        }
+    });
+    vm.$mount(div);
+    let svg = vm.$el.querySelector('svg');
+    let {order} = window.getComputedStyle(svg);
+    expect(order).to.eq('2');
+    vm.$el.remove();
+    vm.$destroy();
+}
 
