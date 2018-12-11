@@ -22,6 +22,7 @@ new Vue({
 });
 
 //单元测试
+// 测试按钮含有icon
 {
     const Constructor = Vue.extend(Button);
     const vm = new Constructor({
@@ -36,7 +37,7 @@ new Vue({
     vm.$el.remove();
     vm.$destroy();
 }
-
+// i-loading
 {
     const Constructor = Vue.extend(Button);
     const vm = new Constructor({
@@ -96,7 +97,8 @@ new Vue({
         }
     });
     vm.$mount();
-    let spy = chai.spy(function () {});
+    let spy = chai.spy(function () {
+    });
     vm.$on('click', spy);
     let button = vm.$el;
     button.click();

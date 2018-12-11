@@ -9,7 +9,12 @@
 </template>
 
 <script>
+    import Icon from './icon'
+
     export default {
+        components: {
+            'u-icon': Icon
+        },
         props: {
             icon: {},
             loading: {
@@ -50,31 +55,38 @@
         color: var(--color);
         padding: 0 1em;
         border-radius: var(--border-radius);
+
         &:hover {
             color: var(--hover-color);
             background: var(--button-hover-bg);
         }
+
         &:active {
             outline: none;
             background: var(--active-color);
         }
+
         > .u-icon {
             order: 1;
             margin-right: .3em;
         }
+
         > .content {
             order: 2;
         }
+
         &.icon-right {
             > .u-icon {
                 order: 2;
                 margin-right: 0;
                 margin-left: .3em;
             }
+
             > .content {
                 order: 1;
             }
         }
+
         .loading {
             animation: circle 2s linear infinite;
         }
