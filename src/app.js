@@ -6,6 +6,7 @@ import Icon from './icon'
 import ButtonGroup from './button-group'
 
 import './reset.css'
+import './svg'
 
 chai.use(spies);
 Vue.component('u-button', Button);
