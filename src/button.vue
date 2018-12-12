@@ -12,6 +12,7 @@
     import Icon from './icon'
 
     export default {
+        name: "UButton",
         components: {
             'u-icon': Icon
         },
@@ -32,7 +33,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @keyframes circle {
         0% {
             transform: rotate(0deg);
@@ -43,7 +44,6 @@
     }
 
     .u-button {
-
         display: inline-flex;
         justify-content: center;
         align-items: center;
