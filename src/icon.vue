@@ -6,17 +6,17 @@
 
 <script>
     export default {
-        name: "icon",
+        name: "UIcon",
         props: {
             name: {}
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .u-icon {
-        width: 1em;
-        height: 1em;
+        width: 1.2em;
+        height: 1.2em;
         fill: currentColor;
         overflow: hidden;
     }
