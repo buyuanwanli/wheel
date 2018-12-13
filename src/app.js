@@ -22,7 +22,13 @@ const expect = chai.expect;
 new Vue({
     el: '#app',
     data: {
-        loading1: false
+        loading1: false,
+        message: ''
+    },
+    methods: {
+        inputChange(event) {
+            console.log(event.target.value);
+        }
     }
 });
 

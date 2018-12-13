@@ -2,10 +2,10 @@
     <!--:class="{'error'=error}"-->
     <div class="wrapper">
         <input type="text" :value="value" :class="{warning}" :disabled="disabled" :readonly="readonly"
-               @change="$emit('change',$event)"
-               @input="$emit('input',$event)"
-               @focus="$emit('focus',$event)"
-               @blur="$emit('blur',$event)">
+               @change="$emit('change',$event.target.value)"
+               @input="$emit('input',$event.target.value)"
+               @focus="$emit('focus',$event.target.value)"
+               @blur="$emit('blur',$event.target.value)">
         <template v-if="warning">
             <icon name="warning" class="icon-warning"></icon>
             <span class="warningMessage">{{warning}}</span>
