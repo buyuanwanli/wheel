@@ -16,11 +16,34 @@
 </head>
 <body>
 <div id="app">
+    <u-row>
+        <u-col>1</u-col>
+        <u-col>2</u-col>
+    </u-row>
+    <u-row>
+        <u-col>1</u-col>
+        <u-col>2</u-col>
+        <u-col>3</u-col>
+    </u-row>
+    <u-row>
+        <u-col>1</u-col>
+        <u-col>2</u-col>
+        <u-col>3</u-col>
+        <u-col>4</u-col>
+    </u-row>
+    <u-row>
+        <u-col span="2">1</u-col>
+        <u-col span="22">2</u-col>
+    </u-row>
+
     <div class="box">
         <u-input value="Name"></u-input>
         <u-input value="Mail" disabled></u-input>
         <u-input value="只读" readonly></u-input>
-        <u-input value="只读" error="用户名不能为空"></u-input>
+        <u-input value="获取输入内容" @change="inputChange"></u-input>
+        <u-input value="只读" warning="用户名不能为空"></u-input>
+        <u-input value="只读" v-model="message"></u-input>
+        <p>{{message}}</p>
     </div>
 
     <div class="box">
