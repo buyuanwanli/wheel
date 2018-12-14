@@ -1,14 +1,31 @@
 <template>
-    <div class="col" :class="[`col-${span}`]">
+    <div class="col"
+         :class="[
+         span&&`col-${span}`,
+         offset&&`offset-${offset}`]"
+         :style="{
+         paddingLeft:gutter/2+'px',
+         paddingRight:gutter/2+'px'}">
+        <div style="border:1px solid #17e0e4;height: 100px;
+">
         <slot></slot>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: "UCol",
+        data() {
+            return {
+                gutter: 0
+            }
+        },
         props: {
             span: {
+                type: [Number, String]
+            },
+            offset: {
                 type: [Number, String]
             }
         }
@@ -17,15 +34,18 @@
 
 <style scoped lang="scss">
     .col {
-        height: 100px;
         width: 100%;
-        background: #16bac0;
-        border: 1px solid #ff741b;
 
         $class-prefix: col-;
         @for $i from 1 through 24 {
             &.#{$class-prefix}#{$i} {
                 width: ($i/24)*100%;
+            }
+        }
+        $class-prefix: offset-;
+        @for $i from 1 through 24 {
+            &.#{$class-prefix}#{$i} {
+                margin-left: ($i/24)*100%;
             }
         }
     }
