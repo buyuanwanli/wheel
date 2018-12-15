@@ -13,88 +13,110 @@
             padding: 20px;
         }
 
+        .demo {
+            background: #ddd;
+            border: 1px solid orangered;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
 <div id="app">
-    <u-row gutter="20">
-        <u-col span="24"
-               :pad="{span:8}"
-               :narrow-pc="{span:4}"
-               :pc="{span:2}"
-               :wide-pc="{span:1}"
-        >1
+    <u-row>
+        <u-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
         </u-col>
-        <u-col span="24"
-               :pad="{span:16}"
-               :narrow-pc="{span:20}"
-               :pc="{span:22}"
-               :wide-pc="{span:23}"
-        >1
+        <u-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
         </u-col>
-    </u-row>
+        <u-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </u-col>
+        <u-col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </u-col>
 
-    <u-row>
-        <u-col>1</u-col>
-        <u-col>2</u-col>
     </u-row>
-    <u-row align="left">
-        <u-col>1</u-col>
-        <u-col>2</u-col>
-        <u-col>3</u-col>
-    </u-row>
-    <u-row align="right">
-        <u-col>1</u-col>
-        <u-col>2</u-col>
-        <u-col>3</u-col>
-        <u-col>4</u-col>
-    </u-row>
-    <u-row align="center">
-        <u-col span="2">1</u-col>
-        <u-col span="22">2</u-col>
-    </u-row>
-    <u-row>
-        <u-col span="2">1</u-col>
-        <u-col span="20" offset="2">2</u-col>
-    </u-row>
-    <u-row>
-        <u-col span="2">1</u-col>
-        <u-col span="6" offset="2">2</u-col>
-        <u-col span="6">2</u-col>
-        <u-col span="6" offset="2">2</u-col>
-    </u-row>
-    <u-row gutter="32">
-        <u-col>1</u-col>
-        <u-col>2</u-col>
-        <u-col>2</u-col>
-    </u-row>
-    <u-row gutter="40">
-        <u-col>1</u-col>
-        <u-col>2</u-col>
-        <u-col>2</u-col>
-    </u-row>
-
-    <div class="box">
-        <u-input value="Name"></u-input>
-        <u-input value="Mail" disabled></u-input>
-        <u-input value="只读" readonly></u-input>
-        <u-input value="获取输入内容" @change="inputChange"></u-input>
-        <u-input value="只读" warning="用户名不能为空"></u-input>
-        <u-input value="只读" v-model="message"></u-input>
-        <p>{{message}}</p>
-    </div>
-
-    <div class="box">
-        <u-button :loading="loading1" icon="setting" icon-position="right" @click="loading1=!loading1">设置</u-button>
-        <u-button icon="setting" icon-position="left">设置</u-button>
-        <u-button :loading="true" icon="setting" icon-position="left">设置</u-button>
-        <button-group>
-            <u-button icon="left">上一页</u-button>
-            <u-button>更多</u-button>
-            <u-button icon="right" icon-position="right">下一页</u-button>
-        </button-group>
-    </div>
 </div>
+<!--<div id="app">-->
+<!--<u-row gutter="20">-->
+<!--<u-col span="24"-->
+<!--:pad="{span:8}"-->
+<!--:narrow-pc="{span:4}"-->
+<!--:pc="{span:2}"-->
+<!--:wide-pc="{span:1}"-->
+<!--&gt;1-->
+<!--</u-col>-->
+<!--<u-col span="24"-->
+<!--:pad="{span:16}"-->
+<!--:narrow-pc="{span:20}"-->
+<!--:pc="{span:22}"-->
+<!--:wide-pc="{span:23}"-->
+<!--&gt;1-->
+<!--</u-col>-->
+<!--</u-row>-->
+
+<!--<u-row>-->
+<!--<u-col>1</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--</u-row>-->
+<!--<u-row align="left">-->
+<!--<u-col>1</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--<u-col>3</u-col>-->
+<!--</u-row>-->
+<!--<u-row align="right">-->
+<!--<u-col>1</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--<u-col>3</u-col>-->
+<!--<u-col>4</u-col>-->
+<!--</u-row>-->
+<!--<u-row align="center">-->
+<!--<u-col span="2">1</u-col>-->
+<!--<u-col span="22">2</u-col>-->
+<!--</u-row>-->
+<!--<u-row>-->
+<!--<u-col span="2">1</u-col>-->
+<!--<u-col span="20" offset="2">2</u-col>-->
+<!--</u-row>-->
+<!--<u-row>-->
+<!--<u-col span="2">1</u-col>-->
+<!--<u-col span="6" offset="2">2</u-col>-->
+<!--<u-col span="6">2</u-col>-->
+<!--<u-col span="6" offset="2">2</u-col>-->
+<!--</u-row>-->
+<!--<u-row gutter="32">-->
+<!--<u-col>1</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--</u-row>-->
+<!--<u-row gutter="40">-->
+<!--<u-col>1</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--<u-col>2</u-col>-->
+<!--</u-row>-->
+
+<!--<div class="box">-->
+<!--<u-input value="Name"></u-input>-->
+<!--<u-input value="Mail" disabled></u-input>-->
+<!--<u-input value="只读" readonly></u-input>-->
+<!--<u-input value="获取输入内容" @change="inputChange"></u-input>-->
+<!--<u-input value="只读" warning="用户名不能为空"></u-input>-->
+<!--<u-input value="只读" v-model="message"></u-input>-->
+<!--<p>{{message}}</p>-->
+<!--</div>-->
+
+<!--<div class="box">-->
+<!--<u-button :loading="loading1" icon="setting" icon-position="right" @click="loading1=!loading1">设置</u-button>-->
+<!--<u-button icon="setting" icon-position="left">设置</u-button>-->
+<!--<u-button :loading="true" icon="setting" icon-position="left">设置</u-button>-->
+<!--<button-group>-->
+<!--<u-button icon="left">上一页</u-button>-->
+<!--<u-button>更多</u-button>-->
+<!--<u-button icon="right" icon-position="right">下一页</u-button>-->
+<!--</button-group>-->
+<!--</div>-->
+<!--</div>-->
 <script src="./src/app.js"></script>
 </body>
 </html>
