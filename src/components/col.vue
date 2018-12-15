@@ -36,17 +36,30 @@
             pc: {type: Object, validator,},
             widePc: {type: Object, validator,}
         },
+        methods: {
+            createClass(spanAndOffset, string = '') {
+                if (!spanAndOffset) {
+                    return []
+                }
+                let array = [];
+                if (spanAndOffset.span) {
+                    array.push(`col-${string}-${spanAndOffset.span}`)
+                }
+                if (spanAndOffset.offset) {
+                    array.push(`offset-${string}-${spanAndOffset.offset}`)
+                }
+                return array
+            }
+        },
         computed: {
             colClass() {
                 let {span, offset, pad, narrowPc, pc, widePc} = this;
-                let phoneClass = [];
                 return [
-                    span && `col-${span}`,
-                    offset && `offset-${offset}`,
-                    ...(pad ? [`col-pad-${pad.span}`] : []),
-                    ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-                    ...(pc ? [`col-pc-${pc.span}`] : []),
-                    ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
+                    ...this.createClass(span, offset),
+                    ...this.createClass(pad, 'pad'),
+                    ...this.createClass(narrowPc, 'narrow-pc'),
+                    ...this.createClass(pc, 'pc'),
+                    ...this.createClass(widePc, 'wide-pc')
                 ]
             },
             colPadding() {
