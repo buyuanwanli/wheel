@@ -2,6 +2,14 @@
 **作者：不远**   
 [![Build Status](https://travis-ci.org/buyuanwanli/wheel.svg?branch=master)](https://travis-ci.org/buyuanwanli/wheel)
 ---------------------------------
+## 常用命令
+1. 开始部署
+`npm start`
+2. 单元测试
+`npm run test`
+3. 持续单元测试
+`npm run dev-test`
+
 ## 介绍
 一个UI组件框架,可以轻松的调用各种样式的UI组件
 ## 开始使用
