@@ -1,3 +1,4 @@
+import plugin from './plugin'
 import Vue from 'vue'
 import chai from 'chai'
 import spies from 'chai-spies'
@@ -12,11 +13,14 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Sider from './components/sider'
 import Content from './components/content'
+import Toast from './components/toast'
+
 
 import './style/reset.css'
 import './js/svg'
 
 chai.use(spies);
+Vue.use(plugin);
 Vue.component('u-button', Button);
 Vue.component('u-icon', Icon);
 Vue.component('button-group', ButtonGroup);
@@ -28,6 +32,7 @@ Vue.component('u-header', Header);
 Vue.component('u-content', Content);
 Vue.component('u-sider', Sider);
 Vue.component('u-footer', Footer);
+Vue.component('u-toast', Toast);
 
 
 /** @namespace chai.expect */
@@ -39,10 +44,16 @@ new Vue({
         loading1: false,
         message: ''
     },
+    created() {
+
+    },
     methods: {
-        inputChange(event) {
-            console.log(event.target.value);
+        showToast() {
+            this.$toast('我是msg')
         }
+        /*        inputChange(event) {
+                    console.log(event.target.value);
+                }*/
     }
 });
 
