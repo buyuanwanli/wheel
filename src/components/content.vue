@@ -1,6 +1,7 @@
 <template>
-    <div class="content"></div>
-    <slot></slot>
+    <div class="content">
+        <slot></slot>
+    </div>
 
 </template>
 
@@ -10,6 +11,8 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .content {
+        flex-grow: 2;
+    }
 </style>

@@ -1,6 +1,7 @@
 <template>
-    <div class="header"></div>
-    <slot></slot>
+    <div class="header">
+        <slot></slot>
+    </div>
 
 </template>
 
@@ -10,6 +11,7 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .header {
+    }
 </style>
