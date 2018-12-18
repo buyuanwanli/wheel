@@ -1,4 +1,6 @@
 <template>
+    <div class="footer"></div>
+    <slot></slot>
 
 </template>
 

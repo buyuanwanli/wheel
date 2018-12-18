@@ -7,6 +7,11 @@ import ButtonGroup from './components/button-group'
 import Input from './components/input'
 import Row from './components/row'
 import Col from './components/col'
+import Layout from './components/layout'
+import Header from './components/header'
+import Footer from './components/footer'
+import Sider from './components/sider'
+import Content from './components/content'
 
 import './style/reset.css'
 import './js/svg'
@@ -18,6 +23,11 @@ Vue.component('button-group', ButtonGroup);
 Vue.component('u-input', Input);
 Vue.component('u-row', Row);
 Vue.component('u-col', Col);
+Vue.component('u-layout', Layout);
+Vue.component('u-header', Header);
+Vue.component('u-content', Content);
+Vue.component('u-sider', Sider);
+Vue.component('u-footer', Footer);
 
 
 /** @namespace chai.expect */

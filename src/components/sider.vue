@@ -1,4 +1,6 @@
 <template>
+    <div class="sider"></div>
+    <slot></slot>
 
 </template>
 
