@@ -1,7 +1,9 @@
 <template>
     <div class="toast" ref="wrapper">
-        <slot v-if="!enableHtml"></slot>
-        <div v-else v-html="$slots.default"></div>
+        <div class="msg">
+            <slot v-if="!enableHtml"></slot>
+            <div v-else v-html="$slots.default"></div>
+        </div>
         <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
@@ -35,6 +37,19 @@
             }
         },
         methods: {
+            execAutoClose() {
+                if (this.autoClose) {
+                    setTimeout(() => {
+                        this.close()
+                    }, this.autoCloseDelay * 1000)
+                }
+            },
+            updateStyle() {
+                this.$nextTick(() => {
+                    this.$refs.line.style.height =
+                        `${this.$refs.wrapper.getBoundingClientRect().height}px`
+                })
+            },
             close() {
                 this.$el.remove();
                 this.$destroy()
@@ -47,15 +62,8 @@
             }
         },
         mounted() {
-            if (this.autoClose) {
-                setTimeout(() => {
-                    this.close()
-                }, this.autoCloseDelay * 1000)
-            }
-            this.$nextTick(() => {
-                this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height
-                    }px`
-            })
+            this.updateStyle();
+            this.execAutoClose();
         }
     }
 </script>
@@ -79,7 +87,10 @@
         color: $color;
         box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, .8);
         border-radius: 5px;
-        padding: 0 1em;
+
+        .msg {
+            padding: .5em 1em;
+        }
 
         .close {
             flex-shrink: 0;
