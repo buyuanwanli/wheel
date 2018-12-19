@@ -1,6 +1,6 @@
-import plugin from './plugin'
 import Vue from 'vue'
 import chai from 'chai'
+import plugin from './plugin'
 import spies from 'chai-spies'
 import Button from './components/button'
 import Icon from './components/icon'
@@ -45,11 +45,12 @@ new Vue({
         message: ''
     },
     created() {
-
+        // this.$toast('我是弹窗msg', {})
     },
     methods: {
         showToast() {
-            this.$toast('我是msg')
+            this.$toast('很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的阿撒撒撒撒', {})
+            // this.$toast('当前网络不稳定')
         }
         /*        inputChange(event) {
                     console.log(event.target.value);
