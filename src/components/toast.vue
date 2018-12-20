@@ -87,7 +87,14 @@
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, .5);
     $color: #fff;
+    @keyframes fade-in {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+
+    }
+
     .toast {
+        animation: fade-in .5s linear;
         display: flex;
         align-items: center;
         position: fixed;
