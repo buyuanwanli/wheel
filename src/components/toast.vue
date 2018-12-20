@@ -21,7 +21,7 @@
             },
             autoCloseDelay: {
                 type: Number,
-                default: 300
+                default: 5
             },
             closeButton: {
                 type: Object,
@@ -34,6 +34,13 @@
             enableHtml: {
                 type: Boolean,
                 default: false
+            },
+            position: {
+                type: String,
+                default: 'top',
+                validator(value) {
+                    return ['top', 'bottom', 'middle'].indexOf(value) >= 0
+                }
             }
         },
         methods: {
@@ -94,6 +101,7 @@
 
         .close {
             flex-shrink: 0;
+            padding-right: .5em;
         }
 
         .line {
