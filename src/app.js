@@ -49,7 +49,18 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的很多很饿多的阿撒撒撒撒', {})
+            this.$toast('请确认网络环境', {
+                position: 'middle',
+                enableHtml: false,
+                closeButton: {
+                    text: '已确认',
+                    callback() {
+                        console.log('好的');
+                    }
+                },
+                autoClose: true,
+                autoCloseDelay: 50
+            })
             // this.$toast('当前网络不稳定')
         }
         /*        inputChange(event) {
