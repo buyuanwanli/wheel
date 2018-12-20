@@ -1,13 +1,15 @@
 <template>
-    <div class="toast" ref="wrapper" :class="toastClass">
-        <div class="msg">
-            <slot v-if="!enableHtml"></slot>
-            <div v-else v-html="$slots.default"></div>
-        </div>
-        <div class="line" ref="line"></div>
-        <span class="close" v-if="closeButton" @click="onClickClose">
+    <div class="wrapper" :class="toastClass">
+        <div class="toast" ref="toast">
+            <div class="msg">
+                <slot v-if="!enableHtml"></slot>
+                <div v-else v-html="$slots.default"></div>
+            </div>
+            <div class="line" ref="line"></div>
+            <span class="close" v-if="closeButton" @click="onClickClose">
             {{closeButton.text}}
         </span>
+        </div>
     </div>
 </template>
 
@@ -54,7 +56,7 @@
             updateStyle() {
                 this.$nextTick(() => {
                     this.$refs.line.style.height =
-                        `${this.$refs.wrapper.getBoundingClientRect().height}px`
+                        `${this.$refs.toast.getBoundingClientRect().height}px`
                 })
             },
             close() {
@@ -88,58 +90,52 @@
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, .5);
     $color: #fff;
-    @keyframes fade-in {
+    $animation-time: .3s;
+    $animation-style: linear;
+    @keyframes slide-up {
+        0% {opacity: 0;transform: translateY(100%);}
+        100% {opacity: 1;transform: translateY(0);}
+    }
+
+    @keyframes slide-down {
+        0% {opacity: 0;transform: translateY(-100%);}
+        100% {opacity: 1;transform: translateY(0);}
+    }
+
+    @keyframes slide-in {
         0% {opacity: 0;}
         100% {opacity: 1;}
-
     }
 
-    .toast {
-        animation: fade-in .5s linear;
-        display: flex;
-        align-items: center;
-        position: fixed;
-        left: 50%;
-        font-size: $font-size;
-        line-height: 1.8;
-        min-height: $toast-min-height;
-        background: $toast-bg;
-        color: $color;
-        box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, .8);
-        border-radius: 5px;
+    .wrapper {position: fixed;left: 50%;transform: translateX(-50%);
 
-        .msg {
-            padding: .5em 1em;
+        &.position-top {top: 0;
+
+            .toast {animation: slide-down $animation-time $animation-style;
+                border-top-left-radius: 0;border-top-right-radius: 0;}
         }
 
-        .close {
-            flex-shrink: 0;
-            padding-right: .5em;
+        &.position-bottom {bottom: 0;
+
+            .toast {animation: slide-up $animation-time $animation-style;
+                border-bottom-left-radius: 0;border-bottom-right-radius: 0;}
         }
 
-        .line {
-            border: .5px solid $color;
-            height: 100%;
-            margin: 0 .5em;
-        }
+        &.position-middle {animation: slide-in $animation-time $animation-style;
+            top: 50%;transform: translate(-50%, -50%)}
 
-        &.position-top {
-            top: 0;
-            transform: translateX(-50%);
+        .toast {display: flex;border-radius: 5px;
+            align-items: center;font-size: $font-size;
+            line-height: 1.8;min-height: $toast-min-height;
+            background: $toast-bg;color: $color;
+            box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, .8);
 
-        }
+            .msg {padding: .5em 1em;}
 
-        &.position-bottom {
-            bottom: 0;
-            transform: translateX(-50%);
+            .close {flex-shrink: 0;padding-right: .5em;}
 
-        }
-
-        &.position-middle {
-            top: 50%;
-            transform: translate(-50%, -50%);
+            .line {border: .5px solid $color;height: 100%;margin: 0 .5em;}
         }
     }
-
 
 </style>

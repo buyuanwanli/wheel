@@ -50,7 +50,7 @@ new Vue({
     methods: {
         showToast() {
             this.$toast('请确认网络环境', {
-                position: 'middle',
+                position: 'bottom',
                 enableHtml: false,
                 closeButton: {
                     text: '已确认',
@@ -63,9 +63,9 @@ new Vue({
             })
             // this.$toast('当前网络不稳定')
         }
-        /*        inputChange(event) {
-                    console.log(event.target.value);
-                }*/
+        /*inputChange(event) {
+           console.log(event.target.value);
+         }*/
     }
 });
 

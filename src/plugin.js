@@ -5,7 +5,7 @@ function creastToast({Vue, msg, propsData, onClose}) {
     let toast = new Constructor({propsData});
     toast.$slots.default = msg;
     toast.$mount();
-    toast.$on('close', onClose)
+    toast.$on('close', onClose);
     document.body.appendChild(toast.$el);
     return toast
 }
