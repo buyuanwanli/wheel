@@ -58,8 +58,7 @@ new Vue({
                         console.log('好的');
                     }
                 },
-                autoClose: true,
-                autoCloseDelay: 5
+                autoClose: 3,
             })
             // this.$toast('当前网络不稳定')
         }
