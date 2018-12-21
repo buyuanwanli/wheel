@@ -30,13 +30,16 @@ describe('Toast', () => {
             const Constructor = Vue.extend(Toast);
             const vm = new Constructor({
                 propsData: {
-                    text: '关闭吧',
-                    callback,
+                    closeButton: {
+                        text: '关闭',
+                        callback,
+                    }
                 }
             }).$mount();
-            console.log(vm.$el.outerHTML);
-            let closeButton = vm.$el.querySelector('.close')
-            expect(closeButton.textContent.trim()).to.eq('关闭')
+            let closeButton = vm.$el.querySelector('.close');
+            expect(closeButton.textContent.trim()).to.eq('关闭');
+            closeButton.click();
+            expect(callback).to.have.been.called
         });
     })
 });
