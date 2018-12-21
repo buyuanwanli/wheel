@@ -25,5 +25,18 @@ describe('Toast', () => {
                 done()
             }, 1500)
         });
+        it('接受closeButton', () => {
+            const callback = sinon.fake();
+            const Constructor = Vue.extend(Toast);
+            const vm = new Constructor({
+                propsData: {
+                    text: '关闭吧',
+                    callback,
+                }
+            }).$mount();
+            console.log(vm.$el.outerHTML);
+            let closeButton = vm.$el.querySelector('.close')
+            expect(closeButton.textContent.trim()).to.eq('关闭')
+        });
     })
 });
