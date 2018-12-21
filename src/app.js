@@ -59,7 +59,7 @@ new Vue({
                     }
                 },
                 autoClose: true,
-                autoCloseDelay: 50
+                autoCloseDelay: 5
             })
             // this.$toast('当前网络不稳定')
         }
