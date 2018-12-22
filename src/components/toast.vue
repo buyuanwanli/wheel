@@ -66,7 +66,7 @@
                 this.$destroy()
             },
             onClickClose() {
-                this.close()
+                this.close();
                 if (this.closeButton && typeof this.closeButton.callback === 'function') {
                     this.closeButton.callback(this)
                 }
