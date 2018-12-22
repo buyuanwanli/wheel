@@ -34,7 +34,6 @@ describe('Toast', () => {
                     callback,
                 }
             }).$mount();
-            console.log(vm.$el.outerHTML);
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('关闭')
         });

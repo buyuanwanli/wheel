@@ -19,7 +19,7 @@
         props: {
             autoClose: {
                 type: [Boolean, Number],
-                default: true,
+                default: 5,
                 validator(value) {
                     return value === false || typeof value === "number";
                 }
@@ -54,8 +54,10 @@
             },
             updateStyle() {
                 this.$nextTick(() => {
-                    this.$refs.line.style.height =
-                        `${this.$refs.toast.getBoundingClientRect().height}px`
+                    if (this.$refs.line) {
+                        this.$refs.line.style.height =
+                            `${this.$refs.toast.getBoundingClientRect().height}px`
+                    }
                 })
             },
             close() {
@@ -136,5 +138,4 @@
             .line {border: .5px solid $color;height: 100%;margin: 0 .5em;}
         }
     }
-
 </style>
