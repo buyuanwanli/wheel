@@ -49,9 +49,9 @@ new Vue({
     },
     methods: {
         showToast() {
-            this.$toast('请确认网络环境', {
+            this.$toast(['<a href="http://www.qq.com">ssss</a>'], {
                 position: 'bottom',
-                enableHtml: false,
+                enableHtml: true,
                 closeButton: {
                     text: '已确认',
                     callback() {
