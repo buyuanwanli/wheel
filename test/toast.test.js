@@ -37,5 +37,15 @@ describe('Toast', () => {
             let closeButton = vm.$el.querySelector('.close')
             expect(closeButton.textContent.trim()).to.eq('关闭')
         });
+        it('接受 enableHtml', () => {
+            const Constructor = Vue.extend(Toast);
+            const vm = new Constructor({
+                propsData: {enableHtml: true}
+            });
+            vm.$slots.default = ['<strong id="test">hi</strong>']
+            vm.$mount();
+            let strong = vm.$el.querySelector('#test');
+            expect(strong).to.exist;
+        })
     })
 });
