@@ -34,7 +34,7 @@ describe('Toast', () => {
                     callback,
                 }
             }).$mount();
-            let closeButton = vm.$el.querySelector('.close')
+            let closeButton = vm.$el.querySelector('.close');
             expect(closeButton.textContent.trim()).to.eq('关闭')
         });
         it('接受 enableHtml', () => {
@@ -46,6 +46,13 @@ describe('Toast', () => {
             vm.$mount();
             let strong = vm.$el.querySelector('#test');
             expect(strong).to.exist;
+        });
+        it('接受 position', () => {
+            const Constructor = Vue.extend(Toast);
+            const vm = new Constructor({
+                propsData: {position: 'middle'}
+            }).$mount();
+            expect(vm.$el.classList.contains('position-middle')).to.eq(true);
         })
     })
 });
