@@ -56,3 +56,7 @@ expect(xxx).to.equal(yyy)
     </div>
 </template>
 ```
+
+
+### toast
+ 1. enableHtml中this.$toast传递的参数为数组
