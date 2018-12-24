@@ -12,7 +12,25 @@
 </head>
 <body>
 <div id="app">
-    <button @click="showToast">点我弹窗</button>
+    <u-tab :selected.sync="selectedTab">
+            <u-tab-header selected="game">
+                <u-icon name="setting"></u-icon>
+                <u-tab-item name="cars">汽车</u-tab-item>
+                <u-tab-item name="sports">体育</u-tab-item>
+                <u-tab-item name="game">游戏</u-tab-item>
+            </u-tab-header>
+            <u-tab-content>
+                <u-tab-pane name="cars">
+                    汽车相关资讯
+                </u-tab-pane>
+                <u-tab-pane name="sports">
+                    体育相关资讯
+                </u-tab-pane>
+                <u-tab-pane name="game">
+                    游戏相关资讯
+                </u-tab-pane>
+            </u-tab-content>
+        </u-tab>
 </div>
 <script src="./src/app.js"></script>
 </body>

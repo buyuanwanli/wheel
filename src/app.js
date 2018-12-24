@@ -14,6 +14,11 @@ import Footer from './components/footer'
 import Sider from './components/sider'
 import Content from './components/content'
 import Toast from './components/toast'
+import Tab from './components/tab'
+import TabHeader from './components/tab-header'
+import TabItem from './components/tab-item'
+import TabContent from './components/tab-content'
+import TabPane from './components/tab-pane'
 
 
 import './style/reset.css'
@@ -33,6 +38,11 @@ Vue.component('u-content', Content);
 Vue.component('u-sider', Sider);
 Vue.component('u-footer', Footer);
 Vue.component('u-toast', Toast);
+Vue.component('u-tab', Tab);
+Vue.component('u-tab-header', TabHeader);
+Vue.component('u-tab-item', TabItem);
+Vue.component('u-tab-pane', TabPane);
+Vue.component('u-tab-content', TabContent);
 
 
 /** @namespace chai.expect */
