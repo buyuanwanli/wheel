@@ -52,7 +52,8 @@ new Vue({
     el: '#app',
     data: {
         loading1: false,
-        message: ''
+        message: '',
+        selectedTap: 'game'
     },
     created() {
         // this.$toast('我是弹窗msg', {})
