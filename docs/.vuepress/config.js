@@ -1,4 +1,5 @@
 module.exports = {
+    base:"/wheel/",
     title: 'Aloe UI',
     description: '做一个简单的UI框架',
     themeConfig: {
