@@ -34,6 +34,16 @@
 </script>
 
 <style lang="scss" scoped>
+    $button-height: 32px;
+    $font-size: 14px;
+    $button-bg: #ECF5FF;
+    $button-hover-bg: #409EFF;
+    $border-radius: 4px;
+    $color: #409EFF;
+    $hover-color: #fff;
+    $border-color: #409EFF;
+    $border-color-hover: #666;
+    $active-color: #3991ff;
     @keyframes circle {
         0% {
             transform: rotate(0deg);
@@ -48,22 +58,22 @@
         justify-content: center;
         align-items: center;
         vertical-align: middle;
-        height: var(--button-height);
-        font-style: var(--font-size);
-        background: var(--button-bg);
-        border: 1px solid var(--border-color);
-        color: var(--color);
+        height: $button-height;
+        font-style: $font-size;
+        background: $button-bg;
+        border: 1px solid $border-color;
+        color: $color;
         padding: 0 1em;
-        border-radius: var(--border-radius);
+        border-radius: $border-radius;
 
         &:hover {
-            color: var(--hover-color);
-            background: var(--button-hover-bg);
+            color: $hover-color;
+            background: $button-hover-bg;
         }
 
         &:active {
             outline: none;
-            background: var(--active-color);
+            background: $active-color;
         }
 
         > .u-icon {

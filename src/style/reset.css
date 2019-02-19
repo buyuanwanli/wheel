@@ -4,17 +4,3 @@
     box-sizing: border-box;
 }
 
-:root {
-    --button-height: 32px;
-    --font-size: 14px;
-    --button-bg: #ECF5FF;
-    --button-hover-bg: #409EFF;
-    --border-radius: 4px;
-    --color: #409EFF;
-    --hover-color: #fff;
-    --border-color: #409EFF;
-    --border-color-hover: #666;
-    --active-color: #3991ff;
-}
-
-
